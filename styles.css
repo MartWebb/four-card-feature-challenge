@@ -1,0 +1,196 @@
+/* General */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    /* border: black 1px solid; */
+    padding: 5.75rem 1.5rem;
+    text-align: center;
+    font-weight: 200;
+}
+
+.main {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+/*  Header */
+
+header {
+    max-width: 36rem;
+    margin: 0 auto;
+    color:hsl(229, 6%, 66%);
+}
+
+.header-text-one {
+    font-weight: 200;
+    font-size: 1.6rem;
+}
+
+.header-text-two {
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding-bottom: 1.25rem;
+    color:hsl(234, 12%, 34%);
+}
+
+.header-text-three {
+    padding-bottom: 4.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Cards */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 14rem;
+    width: 100%;
+    padding: 1.8em;
+    border-top-width: 0.25rem;
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+    box-shadow: 0 0.75rem 1rem -0.25rem rgba(76, 78, 97, 0.18);
+}
+
+.card-title {
+    font-size: 1.44em;
+    color:hsl(234, 12%, 34%);
+}
+
+.card-info {
+    font-size: .8em;
+    color:hsl(229, 6%, 66%);
+    margin-top: .5em;
+    padding-bottom: 2em;
+    line-height: 1.8em;
+}
+.card-one {
+    border-top: 3px solid hsl(180, 62%, 55%);
+    margin-bottom: 2em;
+}
+
+.card-two {
+    border-top: 3px solid hsl(0, 78%, 62%);
+    margin-bottom: 2em;
+}
+
+.card-three {
+    border-top: 3px solid hsl(34, 97%, 64%);
+    margin-bottom: 2em;
+}
+
+.card-four {
+    border-top: 3px solid hsl(212, 86%, 64%);
+    margin-bottom: 3em;
+}
+
+.card-image {
+    width: 2.8em;
+    height: 2.8em;
+    position: absolute;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    
+}
+
+/* Med Screens */
+
+@media (min-width: 600px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* Large Screens */
+
+@media (min-width: 900px) {
+    /* General */
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    main {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+        ".          team-builder ."
+        "supervisor team-builder calculator"
+        "supervisor karma        calculator"
+        ".          karma        .";
+        gap: 1em;
+    }
+
+    /* Header */
+
+    .header-text-one {
+        font-size: 2rem;
+    }
+
+    .header-text-two {
+        font-size: 2rem;
+    }
+
+    .header-text-three {
+        font-size: 1rem;
+    }
+
+    /* Cards */
+
+    .card {
+        max-width: 25rem;
+    }
+
+    .card-one {
+        grid-area: supervisor;
+    }
+
+    .card-two {
+        grid-area: team-builder;
+    }
+
+    .card-three {
+        grid-area: karma;
+    }
+
+    .card-four {
+        grid-area: calculator;
+    }
+
+}
+
+@media (min-width: 1180px) {
+
+    .container {
+        width: 80%;
+    }
+
+    main {
+        gap: 2em;
+    }
+}
